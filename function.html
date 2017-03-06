@@ -13,12 +13,22 @@
 
 <script type="text/javascript">
 
-var button=document.getElementById('button'),
-		input=document.getElementById('aqi-input'),
-		aqi=document.getElementById('aqi-display');
-		button.onclick=function(){
-			aqin.innerHTML=input.value;
-		}
+
+		(function(){
+			var button=document.getElementById('button'),
+					input=document.getElementById('aqi-input'),
+					aqi=document.getElementById('aqi-display');
+					button.onclick=function(){
+					
+					if(input.value.trim()!==''){
+						aqi.innerHTML=input.value;
+					}else{
+						aqi.innerHTML="请输入任意数值";
+						input.focus();
+					}
+				}
+				
+		})()
 
 </script>
 </body>
